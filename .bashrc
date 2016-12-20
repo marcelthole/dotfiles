@@ -642,4 +642,5 @@ _isroot=false
 ANDROID_HOME=/home/$USER/Android/Sdk
 PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=~'
+source ~/.bash-powerline.sh
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
