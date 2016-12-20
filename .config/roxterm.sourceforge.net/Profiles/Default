@@ -1,0 +1,17 @@
+[roxterm profile]
+colour_scheme=Tango
+hide_menubar=1
+always_show_tabs=0
+width=800
+height=400
+font=DejaVu Sans Mono 10
+cursor_blink_mode=0
+saturation=0,98
+audible_bell=0
+show_add_tab_btn=1
+hide_mouse=1
+scroll_on_output=1
+scroll_on_keystroke=1
+scrollbar_pos=1
+limit_scrollback=1
+scrollback_lines=1000
