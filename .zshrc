@@ -21,3 +21,6 @@ source ~/.config/zsh/candy.zsh-theme
 
 # use the config alias for dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# completion for slash after ..
+zstyle ':completion:*' special-dirs true
