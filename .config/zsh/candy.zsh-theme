@@ -1,5 +1,5 @@
 # $(parse_git_dirty)
-PROMPT=$'\[%{$fg_bold[yellow]%}%n%{$fg_bold[green]%}\@%{$fg_bold[red]%}%m%{$reset_color%}\]%{$bg[blue]%} %D{%X} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} $(git_remote_status)\
+PROMPT=$'\[%{$fg_bold[yellow]%}%n%{$fg_bold[green]%}\@%{$fg_bold[red]%}%m%{$reset_color%}\]%{$fg[blue]%} %D{%X} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} $(git_remote_status)\
 ❯%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[yellow]%}("
