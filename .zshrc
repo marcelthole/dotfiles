@@ -5,6 +5,7 @@ if [ ! -f $OMZSH ] ; then
   echo "Archlinux Example: yaourt -S oh-my-zsh-git"
 fi
 
+HOST_COLOR=$(cat $HOME/.config/zsh/hostcolor 2>/dev/null || echo "red")
 ZSH_THEME=""
 DISABLE_AUTO_UPDATE="true"
 plugins=(git)
@@ -19,11 +20,13 @@ function git_local_status() {
     echo $(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --always 2>/dev/null)
 }
 function git_local_or_remote_status() {
-    local remote_status=$(git_remote_status);
-    if [ -z "$remote_status" ]; then
-        echo ${ZSH_THEME_GIT_PROMPT_PREFIX}local/$(git_local_status)$ZSH_THEME_GIT_PROMPT_SUFFIX
-    else
+    local remote_status=$(git_remote_status)
+    local local_status=$(git_local_status)
+
+    if [ ! -z "$remote_status" ]; then
         echo $remote_status
+    elif [ ! -z "$local_status" ]; then
+        echo ${ZSH_THEME_GIT_PROMPT_PREFIX}local/${local_status}$ZSH_THEME_GIT_PROMPT_SUFFIX
     fi
 }
 
