@@ -1,5 +1,6 @@
 [global_config]
   always_split_with_profile = True
+  dbus = False
   homogeneous_tabbar = False
   inactive_color_offset = 0.89
   scroll_tabbar = True
@@ -8,14 +9,115 @@
 [keybindings]
 [layouts]
   [[default]]
-    [[[child1]]]
-      parent = window0
-      type = Terminal
-    [[[window0]]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 1055a9df-a50a-48d6-b959-e9c50300d7d9
+      last_active_window = True
+      maximised = True
+      order = 0
       parent = ""
+      position = 0:26
+      size = 1920, 1103
+      title = Terminator
       type = Window
+  [[Arbeit]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 4616e415-2945-4394-980d-7e7756878655
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:26
+      size = 1920, 1103
+      title = "Terminator - Arbeit"
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 551
+      ratio = 0.28772845953
+      type = HPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 293
+      ratio = 0.266848816029
+      type = VPaned
+    [[[child4]]]
+      order = 1
+      parent = child2
+      position = 149
+      ratio = 0.185323383085
+      type = VPaned
+    [[[child6]]]
+      order = 1
+      parent = child4
+      position = 149
+      ratio = 0.15
+      type = VPaned
+    [[[child9]]]
+      order = 1
+      parent = child1
+      position = 846
+      ratio = 0.770491803279
+      type = VPaned
+    [[[terminal-api]]]
+      directory = /var/www/hotelvergleich/hotelapi/
+      order = 0
+      parent = child9
+      profile = default
+      type = Terminal
+      uuid = 4616e415-2945-4394-980d-7e7756878655
+      title = "API-Workdir"
+    [[[terminal-home]]]
+      directory = /home/marcel
+      order = 1
+      parent = child9
+      profile = default
+      type = Terminal
+      uuid = 798fb99a-5279-4615-9388-2a85b122a7a2
+      title = "Home"
+    [[[terminal-api-docker]]]
+      command = ./docker.sh
+      directory = /var/www/hotelvergleich/hotelapi/
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = c3d741e6-d3d3-4fb5-ae1e-0be5222a364d
+      title = "Api-Docker"
+    [[[terminal-frontend-docker]]]
+      command = ./docker.sh
+      directory = /var/www/hotelvergleich/frontend/
+      order = 0
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = 8c0c1962-88f6-4460-9b55-ec4fbd14ea1f
+      title = "Frontend-Docker"
+    [[[terminal-database-docker]]]
+      command = ./docker.sh
+      directory = /var/www/hotelvergleich/hotelapi-database/
+      order = 0
+      parent = child6
+      profile = default
+      type = Terminal
+      uuid = 04c0e5b1-c24e-4054-8c32-844cdda9747d
+      title = "DB-Docker"
+    [[[terminal-api-docker-logs]]]
+      directory = /var/www/hotelvergleich/hotelapi/
+      command = ./dockerLog.sh
+      order = 1
+      parent = child6
+      profile = default
+      type = Terminal
+      uuid = 733f0bc4-f5b4-451a-97d9-3f573d3afb8d
+      title = "API Logs"
 [plugins]
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
+    font = DejaVu Sans Mono 8
     scroll_on_output = True
+    use_system_font = False
