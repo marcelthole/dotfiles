@@ -39,4 +39,4 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # completion for slash after ..
 zstyle ':completion:*' special-dirs true
 
-alias gpurge='echo $(git branch --merged | grep -v "\*" | grep -v "master" | grep -v "staging") | xargs -n 1 git branch -d'
+alias gpurge='echo $(git branch --merged | grep -v "\*" | grep -v "master" | grep -v "staging" | grep -v "integration") | xargs -n 1 git branch -d'
