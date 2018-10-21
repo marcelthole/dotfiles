@@ -40,7 +40,6 @@ function git_local_or_remote_status() {
 
 # Custom candy theme
 source ~/.config/zsh/candy.zsh-theme
-
 # use the config alias for dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -48,5 +47,3 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 zstyle ':completion:*' special-dirs true
 
 alias gpurge='echo $(git branch --merged | grep -v "\*" | grep -v "master" | grep -v "staging" | grep -v "integration") | xargs -n 1 git branch -d'
-
-

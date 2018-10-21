@@ -1,12 +1,11 @@
 focus_follows_mouse no
-workspace_layout tabbed
+workspace_layout stacking
 bindsym $mod+Tab workspace back_and_forth
 
 exec "setxkbmap -layout de"
 exec --no-startup-id i3-msg "layout toggle split"
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id nm-applet
-
 
 bindsym $mod+L exec i3lock
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
@@ -15,6 +14,8 @@ bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym Print exec xfce4-screenshooter 
+bindsym XF86Display exec "xrandr --output HDMI1 --auto --output VGA1 --auto --output HDMI1 --same-as LVDS1 --output VGA1 --same-as LVDS1"
+bindsym XF86WebCam exec "xrandr --output HDMI1 --right-of LVDS1 --output VGA1 --right-of LVDS1"
 
 assign [class="(?i)Telegram"] chat
 assign [class="(?i)Firefox"] web
@@ -22,6 +23,12 @@ assign [class="(?i)Thunderbird"] web
 assign [class="(?i)phpstorm"] code
 assign [class="(?i)subl"] code
 assign [class="(?i)postman"] code
+
+for_window [class="(?i)arandr"] floating enable
+
+workspace term output LVDS1
+workspace web output HDMI1
+bindsym $mod+m move workspace to output left
 
 set $mod Mod4
 #font pango:monospace 8
@@ -124,4 +131,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3status
+  output primary
+  tray_output primary
 }

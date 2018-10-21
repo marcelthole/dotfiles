@@ -12,6 +12,7 @@ general {
 }
 
 order += "disk /"
+order += "disk /home"
 order += "wireless _first_"
 order += "battery 0"
 order += "load"
@@ -42,6 +43,11 @@ load {
 }
 
 disk "/" {
-  format = "%avail"
+  format = "/ %avail"
 }
-
+disk "/home" {
+  format = "/home %avail"
+  low_threshold = "2147483648" # 2GB
+  format_below_threshold = "Warning: %percentage_avail (%avail)"
+  threshold_type = "bytes_avail"
+}
