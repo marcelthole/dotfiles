@@ -1,0 +1,6 @@
+[user]
+	name = Marcel Thole
+	email = marcel@marcelthole.de
+[core]
+	autocrlf = input
+	editor = vim

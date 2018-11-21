@@ -1,0 +1,8 @@
+[options]
+    font = DejaVu Sans Mono 8
+    scroll_on_output = true
+    hyperlinks = true
+    cursor_shape = underline
+[colors]
+	foreground = #dcdccc
+	background  = #000
