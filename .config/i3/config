@@ -25,6 +25,8 @@ assign [class="(?i)subl"] code
 assign [class="(?i)postman"] code
 
 for_window [class="(?i)arandr"] floating enable
+for_window [class="(?i)popup"] border none
+for_window [class="(?i)popup"] floating enable
 
 workspace term output LVDS1
 workspace web output HDMI1
@@ -131,7 +133,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   position bottom
-  status_command i3status
+  #status_command i3status
+  status_command py3status -c ~/.config/i3status/config
   output primary
   tray_output primary
 }

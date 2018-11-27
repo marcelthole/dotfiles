@@ -36,6 +36,7 @@ battery 0 {
 tztime local {
   format = "%d.%m.%Y %H:%M:%S"
   timezone = "Europe/Berlin"
+  on_click 1 = "exec yad --no-buttons --geometry=-$X+0-$Y+20 --show-weeks --class \"popup\" --calendar --close-on-unfocus"
 }
 
 load {
@@ -50,4 +51,5 @@ disk "/home" {
   low_threshold = "2147483648" # 2GB
   format_below_threshold = "Warning: %percentage_avail (%avail)"
   threshold_type = "bytes_avail"
+  on_click 1 = "exec nemo /home"
 }
