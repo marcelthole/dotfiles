@@ -2,10 +2,12 @@ focus_follows_mouse no
 workspace_layout stacking
 bindsym $mod+Tab workspace back_and_forth
 
+exec "xdg-settings set default-web-browser firefox.desktop"
 exec "setxkbmap -layout de"
 exec --no-startup-id i3-msg "layout toggle split"
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id nm-applet
+exec --no-startup-id ~/.config/i3/workspaces.sh
 
 bindsym $mod+L exec i3lock -i ~/.config/i3/lockscreen.png -t -c 121212 -u
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
