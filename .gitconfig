@@ -1,0 +1,8 @@
+[user]
+	email = marcel@marcelthole.de
+	name = Marcel Thole
+[core]
+	editor = vim
+
+[includeIf "gitdir:~/projects/work/"]
+	path = ~/projects/work/gitconfig
